@@ -1,0 +1,13 @@
+{
+  "name": "calculator",
+  "version": "1.0.0",
+  "description": "Trading desk: position size, risk to reward, net result, expectancy, drawdown and price levels. Plain HTML, CSS and JavaScript.",
+  "scripts": {
+    "test": "node --test",
+    "test:ui": "node e2e/ui.check.js"
+  },
+  "devDependencies": {
+    "jsdom": "^31.0.1"
+  },
+  "license": "MIT"
+}

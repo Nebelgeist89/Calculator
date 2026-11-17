@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Trading desk</title>
+  <meta name="description" content="Position size, risk to reward, net result, expectancy, drawdown and price levels for day and swing traders.">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <a class="skip" href="#tool">Skip to the calculator</a>
+
+  <header class="top">
+    <h1 class="wordmark">Trading desk</h1>
+
+    <form class="desk" id="desk" aria-label="Desk settings" onsubmit="return false">
+      <div class="field field-instrument">
+        <label for="instrument">Instrument</label>
+        <select id="instrument"></select>
+      </div>
+
+      <div class="field" id="currency-field" hidden>
+        <label for="currency">Currency</label>
+        <select id="currency"></select>
+      </div>
+
+      <div class="field">
+        <label for="account">Account</label>
+        <div class="input-wrap">
+          <input id="account" type="number" min="0" step="any" inputmode="decimal" autocomplete="off">
+          <em id="account-unit"></em>
+        </div>
+      </div>
+
+      <div class="field">
+        <label for="risk">Risk per trade</label>
+        <div class="input-wrap">
+          <input id="risk" type="number" min="0" max="100" step="any" inputmode="decimal" autocomplete="off">
+          <em>%</em>
+        </div>
+      </div>
+
+      <details class="specs">
+        <summary>Contract specs</summary>
+        <p class="tick-readout" id="tick-readout" aria-live="polite"></p>
+        <div class="spec-grid" id="spec-grid"></div>
+        <button type="button" class="btn" id="reset-specs" hidden>Reset to preset</button>
+      </details>
+    </form>
+  </header>
+
+  <div class="layout">
+    <nav class="tools" aria-label="Tools">
+      <ul id="tool-list"></ul>
+    </nav>
+
+    <main id="tool" class="tool">
+      <section class="inputs" id="inputs" aria-label="Inputs"></section>
+      <section class="result" id="result" aria-live="polite" aria-label="Result"></section>
+    </main>
+  </div>
+
+  <footer class="foot">
+    <p>Instrument presets for WIN and WDO follow B3's published contract specs. Check your broker's specs before you rely on any number here. This is a calculator, not advice.</p>
+  </footer>
+
+  <noscript><p class="message error">This calculator needs JavaScript.</p></noscript>
+
+  <script src="js/expression.js"></script>
+  <script src="js/instruments.js"></script>
+  <script src="js/trading.js"></script>
+  <script src="js/fields.js"></script>
+  <script src="js/ruler.js"></script>
+  <script src="js/tools/position-size.js"></script>
+  <script src="js/tools/risk-reward.js"></script>
+  <script src="js/tools/net-pnl.js"></script>
+  <script src="js/tools/expectancy.js"></script>
+  <script src="js/tools/drawdown.js"></script>
+  <script src="js/tools/levels.js"></script>
+  <script src="js/tools/scientific.js"></script>
+  <script src="js/tools/scale-plan.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
